@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трек Noize MC - Ты не считаешь</title>
+    <script>
+        function openApp() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Проверка для Android-устройств
+            if (/android/i.test(userAgent)) {
+                // Попытка открыть Spotify
+                window.location.href = "spotify:track:1fXqLLdjFR8T66YYB8GAuf";
+                setTimeout(function() {
+                    // Если Spotify не установлен, открываем Яндекс Музыку
+                    window.location.href = "https://music.yandex.ru/album/5195139/track/40053690";
+                }, 1000);  // 1 секунда задержки
+            }
+            // Проверка для iOS-устройств (iPhone, iPad)
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                // Попытка открыть Spotify
+                window.location.href = "spotify:track:1fXqLLdjFR8T66YYB8GAuf";
+                setTimeout(function() {
+                    // Если Spotify не установлен, открываем YouTube
+                    window.location.href = "https://www.youtube.com/watch?v=OHCxIuqXfhE&ab_channel=NoizeMC-Topic";
+                }, 1000);  // 1 секунда задержки
+            }
+            // Для остальных устройств, например, настольных браузеров
+            else {
+                // Открыть ссылку на YouTube как дефолт
+                window.location.href = "https://www.youtube.com/watch?v=OHCxIuqXfhE&ab_channel=NoizeMC-Topic";
+            }
+        }
+    </script>
+</head>
+<body onload="openApp()">
+    <h1>Перенаправляем вас на трек "Ты не считаешь"</h1>
+    <p>Если перенаправление не произошло автоматически, <a href="https://www.youtube.com/watch?v=OHCxIuqXfhE&ab_channel=NoizeMC-Topic">нажмите здесь для YouTube</a>.</p>
+</body>
+</html>
